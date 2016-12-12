@@ -1,0 +1,45 @@
+ <h2>Cadastro de perfis</h2>
+          <div class="form-group col-md-4">
+            <label>Nome</label>
+            <input class="form-control" [(ngModel)]="perfilObject.nome"   />
+          </div>
+          <div *ngIf="!edit" class="form-group col-md-3">
+            <button class="btn btn-primary" (click)="salvarPerfil(perfilObject)">Salvar</button>
+          </div>
+          <div *ngIf="edit" class="form-group col-md-3">
+            <button class="btn btn-primary" (click)="editarPerfil(perfilObject, true)">Editar</button>
+          </div>
+          <table class="table table-hover table-striped">
+             <tr>
+                 <th class="col-md-2">
+                    Nome
+                </th>
+                <th class="col-md-2">
+                    Operações
+                </th>
+             </tr>
+             <tr *ngFor="let perfil of perfis; let i = index">
+                <td>
+                    {{perfil.nome}}
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)=editarPerfil(perfil)>Editar</button>
+                    <button class="btn btn-danger" (click)=deletarPerfil(i)>Deletar</button>
+                </td>
+             </tr>
+          </table>
+<!--
+
+<h2>Listagem de perfis</h2>
+    <table class="table table-hover table-striped">
+       <tr>
+          <th>
+              Nome do Perfil
+          </th>
+       </tr>
+       <tr *ngFor="let perfil of perfis">
+          <th>
+              {{perfil.nome}}
+          </th>
+       </tr>
+    </table>-->

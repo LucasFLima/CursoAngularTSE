@@ -1,0 +1,59 @@
+<h2>Cadastro de usuários</h2>
+<div class="form-group col-md-4">
+    <label>Id</label>
+    <input class="form-control" [(ngModel)]="usuarioObject._id"   />
+</div>
+<div class="form-group col-md-4">
+    <label>Nome</label>
+    <input class="form-control" [(ngModel)]="usuarioObject.nome"   />
+</div>
+<div class="form-group col-md-4">
+    <label>Idade</label>
+    <input class="form-control" [(ngModel)]="usuarioObject.idade"   />
+</div>
+<div *ngIf="!edit" class="form-group col-md-3">
+    <button class="btn btn-primary" (click)="salvarUsuario(usuarioObject)">Salvar</button>
+</div>
+<div *ngIf="edit" class="form-group col-md-3">
+    <button class="btn btn-primary" (click)="editarUsuario(usuarioObject, true)">Editar</button>
+</div>
+
+<div *ngIf="errorMessage">
+    <div class="btn-danger">
+        <p>{{errorMessage}}</p>
+    </div>
+</div>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th class="col-md-1">
+            Id
+        </th>
+        <th class="col-md-3">
+            Nome
+        </th>
+        <th class="col-md-1">
+            Idade
+        </th>
+        <th class="col-md-2">
+            Operações
+        </th>
+    </tr>
+    
+    <tr *ngFor="let usuario of usuarios; let i = index">
+        <td>
+            {{usuario._id}}
+        </td>
+        <td>
+            {{usuario.nome}}
+        </td>
+        <td>
+            {{usuario.idade}}
+        </td>
+        <td>
+            <button class="btn btn-primary" (click)="editarUsuario(usuario)">Editar</button>
+            <!-- <button class="btn btn-danger" (click)=deletarUsuario(i)>Deletar</button> -->
+            <button class="btn btn-danger" (click)="deletarUsuario(usuario._id, i)">Deletar</button>
+        </td>
+    </tr>
+</table>

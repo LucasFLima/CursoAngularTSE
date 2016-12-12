@@ -1,0 +1,68 @@
+ <h2>Cadastro de escolas</h2>
+
+         <div class="form-group col-md-2">
+          <label>Nome da Escola</label>
+            <input class="form-control" [(ngModel)]="escolaObject.nome"   />
+          </div>
+         <div class="form-group col-md-1">
+           <label>Sigla</label>
+            <input class="form-control" [(ngModel)]="escolaObject.sigla"   />
+          </div>
+         <div class="form-group col-md-4">
+            <label>Endereço</label>
+            <input class="form-control" [(ngModel)]="escolaObject.endereco"   />
+          </div>
+          <div class="form-group col-md-2">
+            <label>Nível</label>
+            <input class="form-control" [(ngModel)]="escolaObject.nivel"   />
+          </div>
+
+          <div *ngIf="!edit" class="form-group col-md-1">
+            <button class="btn btn-primary" (click)="salvarEscola(escolaObject)">Salvar</button>
+          </div>
+          <div *ngIf="edit" class="form-group col-md-1">
+            <button class="btn btn-primary" (click)="editarEscola(escolaObject, true)">Editar</button>
+          </div>
+
+ 
+          <table class="table table-hover table-striped">
+             <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Sigla
+                </th>
+                <th>
+                    Endereco
+                </th>
+                <th>
+                    Nível
+                </th>
+                    
+                <th>
+                    Operação
+               
+                </th>
+             </tr>
+             <tr *ngFor="let escola of escolas; let i = index">
+                <td>
+                    {{escola.nome}}
+                </td>
+                <td>
+                    {{escola.sigla}}
+                </td>
+                <td>
+                    {{escola.endereco}}
+                </td>
+                <td>
+                    {{escola.nivel}}
+                </td>
+                
+                <td>
+                    <button class="btn btn-primary" (click)=editarEscola(escola)>Editar</button>
+                
+                    <button class="btn btn-danger" (click)="deletarEscola(escola._id, i)">Deletar</button>
+                </td>
+             </tr>
+          </table>

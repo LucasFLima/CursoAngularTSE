@@ -1,0 +1,68 @@
+ <h2>Cadastro de alunos</h2>
+
+         <div class="form-group col-md-3">
+          <label>Nome do Aluno</label>
+            <input class="form-control" [(ngModel)]="alunoObject.nomeAluno"   />
+          </div>
+         <div class="form-group col-md-3">
+           <label>Professor</label>
+            <input class="form-control" [(ngModel)]="alunoObject.professor"   />
+          </div>
+         <div class="form-group col-md-2">
+            <label>Curso</label>
+            <input class="form-control" [(ngModel)]="alunoObject.curso"   />
+          </div>
+          <div class="form-group col-md-1">
+            <label>Matrícula</label>
+            <input class="form-control" [(ngModel)]="alunoObject.matricula"   />
+          </div>
+
+          <div *ngIf="!edit" class="form-group col-md-1">
+            <button class="btn btn-primary" (click)="salvarAluno(alunoObject)">Salvar</button>
+          </div>
+          <div *ngIf="edit" class="form-group col-md-1">
+            <button class="btn btn-primary" (click)="editarAluno(alunoObject, true)">Editar</button>
+          </div>
+
+ 
+          <table class="table table-hover table-striped">
+             <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Professor
+                </th>
+                <th>
+                    Curso
+                </th>
+                <th>
+                    Matrícula
+                </th>
+                    
+                <th>
+                    Operação
+               
+                </th>
+             </tr>
+             <tr *ngFor="let aluno of alunos; let i = index">
+                <td>
+                    {{aluno.nomeAluno}}
+                </td>
+                <td>
+                    {{aluno.professor}}
+                </td>
+                <td>
+                    {{aluno.curso}}
+                </td>
+                <td>
+                    {{aluno.matricula}}
+                </td>
+                
+                <td>
+                    <button class="btn btn-primary" (click)=editarAluno(aluno)>Editar</button>
+                
+                    <button class="btn btn-danger" (click)=deletarAluno(i)>Deletar</button>
+                </td>
+             </tr>
+          </table>
