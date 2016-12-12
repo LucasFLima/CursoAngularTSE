@@ -1,0 +1,81 @@
+<h2>Cadastro de carros</h2>
+
+         <div class="form-group col-md-2">
+          <label>Cor</label>
+            <input class="form-control" [(ngModel)]="carroObject.cor"   />
+          </div>
+
+         <div class="form-group col-md-2"> 
+          <label>Modelo</label>
+            <input class="form-control" [(ngModel)]="carroObject.modelo"   />
+          </div>
+          <div class="form-group col-md-1">
+          <label>Ano</label>
+            <input class="form-control" [(ngModel)]="carroObject.ano"   />
+          </div>
+          <div class="form-group col-md-1"> 
+          <label>Placa</label>
+            <input class="form-control" [(ngModel)]="carroObject.placa"   /> 
+          </div>
+          <div class="form-group col-md-1">
+          <label>Revisões</label>
+            <input class="form-control" [(ngModel)]="carroObject.quantidadeRevisao"   />
+          </div>
+
+
+          <div *ngIf="!edit" class="form-group col-md-1">
+            <button class="btn btn-primary" (click)="salvarCarro(carroObject)">Salvar</button>
+          </div>
+          <div *ngIf="edit" class="form-group col-md-1">
+            <button class="btn btn-primary" (click)="editarCarro(carroObject, true)">Editar</button>
+          </div>
+
+ 
+          <table class="table table-hover table-striped">
+             <tr>
+                <th>
+                    Cor
+                </th>
+                <th>
+                    Modelo
+                </th>
+                <th>
+                    Ano
+                </th>
+                <th>
+                    Placa
+                </th>
+                <th>
+                    Revisões
+                </th>
+
+                <th>
+                    Operação
+               
+                </th>
+             </tr>
+             <tr *ngFor="let carro of carros; let i = index">
+                <td>
+                    {{carro.cor}}
+                </td>
+                <td>
+                    {{aluno.modelo}}
+                </td>
+                <td>
+                    {{aluno.ano}}
+                </td>
+                <td>
+                    {{aluno.placa}}
+                </td>
+                <td>
+                    {{aluno.quantidadeRevisao}}
+                </td>
+
+                
+                <td>
+                    <button class="btn btn-primary" (click)=editarCarro(carro)>Editar</button>
+                
+                    <button class="btn btn-danger" (click)=deletarCarro(i)>Deletar</button>
+                </td>
+             </tr>
+          </table>
