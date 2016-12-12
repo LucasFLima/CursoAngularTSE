@@ -8,38 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
 //passo 2 (importar o componente criado)
-var app_component_1 = require('./app.component');
+var app_component_1 = require("./app.component");
 //importar o componente de usuário
-var usuario_component_1 = require('../usuario/components/usuario.component');
+var usuario_component_1 = require("../usuario/components/usuario.component");
 //importar o componente de usuário
-var perfil_component_1 = require('../perfil/components/perfil.component');
+var perfil_component_1 = require("../perfil/components/perfil.component");
 //importar o componente de aluno
-var aluno_component_1 = require('../aluno/components/aluno.component');
+var aluno_component_1 = require("../aluno/components/aluno.component");
 //importar o componente de escola
-var escola_component_1 = require('../escola/components/escola.component');
+var escola_component_1 = require("../escola/components/escola.component");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule
-            ],
-            //Adicionar essa linha
-            declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, escola_component_1.EscolaComponent],
-            //Adicionar essa linha
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule
+        ],
+        //Adicionar essa linha
+        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, escola_component_1.EscolaComponent],
+        //Adicionar essa linha
+        bootstrap: [app_component_1.AppComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

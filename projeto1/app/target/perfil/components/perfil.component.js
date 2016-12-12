@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var perfil_1 = require('../class/perfil');
-var perfil_service_1 = require('../service/perfil.service');
+var core_1 = require("@angular/core");
+var perfil_1 = require("../class/perfil");
+var perfil_service_1 = require("../service/perfil.service");
 var PerfilComponent = (function () {
     function PerfilComponent(perfilService) {
         this.perfilService = perfilService;
@@ -40,15 +40,15 @@ var PerfilComponent = (function () {
             this.edit = false;
         }
     };
-    PerfilComponent = __decorate([
-        core_1.Component({
-            selector: 'perfil',
-            templateUrl: 'app/perfil/templates/perfil.template.html',
-            providers: [perfil_service_1.PerfilService]
-        }), 
-        __metadata('design:paramtypes', [perfil_service_1.PerfilService])
-    ], PerfilComponent);
     return PerfilComponent;
 }());
+PerfilComponent = __decorate([
+    core_1.Component({
+        selector: 'perfil',
+        templateUrl: 'app/perfil/templates/perfil.template.html',
+        providers: [perfil_service_1.PerfilService]
+    }),
+    __metadata("design:paramtypes", [perfil_service_1.PerfilService])
+], PerfilComponent);
 exports.PerfilComponent = PerfilComponent;
 //# sourceMappingURL=perfil.component.js.map

@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var escola_1 = require('../class/escola');
-var escola_service_1 = require('../service/escola.service');
+var core_1 = require("@angular/core");
+var escola_1 = require("../class/escola");
+var escola_service_1 = require("../service/escola.service");
 var EscolaComponent = (function () {
     function EscolaComponent(escolaService) {
         this.escolaService = escolaService;
@@ -84,15 +84,15 @@ var EscolaComponent = (function () {
     EscolaComponent.prototype.ngOnInit = function () {
         this.getListEscolas();
     };
-    EscolaComponent = __decorate([
-        core_1.Component({
-            selector: 'escola',
-            templateUrl: 'app/escola/templates/escola.template.html',
-            providers: [escola_service_1.EscolaService]
-        }), 
-        __metadata('design:paramtypes', [escola_service_1.EscolaService])
-    ], EscolaComponent);
     return EscolaComponent;
 }());
+EscolaComponent = __decorate([
+    core_1.Component({
+        selector: 'escola',
+        templateUrl: 'app/escola/templates/escola.template.html',
+        providers: [escola_service_1.EscolaService]
+    }),
+    __metadata("design:paramtypes", [escola_service_1.EscolaService])
+], EscolaComponent);
 exports.EscolaComponent = EscolaComponent;
 //# sourceMappingURL=escola.component.js.map

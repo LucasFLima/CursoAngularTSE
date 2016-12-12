@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 // import { USUARIOS } from '../mock/escola.mock';
-var http_1 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 var EscolaService = (function () {
     // construtor da classe para http
     function EscolaService(http) {
@@ -64,11 +64,11 @@ var EscolaService = (function () {
         console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
-    EscolaService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], EscolaService);
     return EscolaService;
 }());
+EscolaService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], EscolaService);
 exports.EscolaService = EscolaService;
 //# sourceMappingURL=escola.service.js.map
