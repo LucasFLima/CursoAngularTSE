@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';  
 import { Aluno } from '../class/aluno';
 import { AlunoService } from '../service/aluno.service'
 
