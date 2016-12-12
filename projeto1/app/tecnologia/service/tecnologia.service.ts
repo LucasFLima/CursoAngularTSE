@@ -1,53 +1,53 @@
 import { Injectable } from '@angular/core';
-import { Escola } from '../class/escola';
-// import { USUARIOS } from '../mock/escola.mock';
+import { Tecnologia } from '../class/tecnologia';
+// import { USUARIOS } from '../mock/tecnologia.mock';
 
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class EscolaService {
+export class TecnologiaService {
     
     // link para chamada ao serviço REST
-    //private escolaServiceUrl = 'https://cursoangularjs2restful.herokuapp.com/escola/';
-    private escolaServiceUrl = 'https://lucasangular.herokuapp.com/escola';
+    //private tecnologiaServiceUrl = 'https://cursoangularjs2restful.herokuapp.com/tecnologia/';
+    private tecnologiaServiceUrl = 'https://lucasangular.herokuapp.com/tecnologia';
     
     // construtor da classe para http
     constructor (private http: Http){}
     
     // com chamada ao serviço MOCK
-//    getListEscola(): Promise<Escola[]> {
+//    getListTecnologia(): Promise<Tecnologia[]> {
 //        return Promise.resolve(USUARIOS);
 //    }
     
     // resultado por meio de observer
-    getListEscola(): Observable<Escola[]> {
-        return this.http.get(this.escolaServiceUrl)
+    getListTecnologia(): Observable<Tecnologia[]> {
+        return this.http.get(this.tecnologiaServiceUrl)
             .map(res => res.json())
             .catch(this.handleError);
     }
     
     //método para salvar o usuário
-    salvarEscola(escola: Escola): Observable<Escola> {
+    salvarTecnologia(tecnologia: Tecnologia): Observable<Tecnologia> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        if (!escola._id) {
-            return this.http.post(this.escolaServiceUrl, escola, options)
+        if (!tecnologia._id) {
+            return this.http.post(this.tecnologiaServiceUrl, tecnologia, options)
                 .map(res => res.json())
                 .catch(this.handleError);
         } else {
-            return this.http.put(this.escolaServiceUrl + "/" + escola._id, escola, options)
+            return this.http.put(this.tecnologiaServiceUrl + "/" + tecnologia._id, tecnologia, options)
                 .map(res => res.json())
                 .catch(this.handleError);
         }
 
     }
     
-    deletarEscola(id: string): Observable<Response> {
+    deletarTecnologia(id: string): Observable<Response> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.delete(this.escolaServiceUrl + "/" + id, options);
+        return this.http.delete(this.tecnologiaServiceUrl + "/" + id, options);
     }
     
     //Crie esse método

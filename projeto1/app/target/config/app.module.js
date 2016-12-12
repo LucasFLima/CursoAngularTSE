@@ -21,7 +21,7 @@ var perfil_component_1 = require("../perfil/components/perfil.component");
 //importar o componente de aluno
 var aluno_component_1 = require("../aluno/components/aluno.component");
 //importar o componente de escola
-var escola_component_1 = require("../escola/components/escola.component");
+var tecnologia_component_1 = require("../tecnologia/components/tecnologia.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +35,7 @@ AppModule = __decorate([
             http_1.HttpModule
         ],
         //Adicionar essa linha
-        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, escola_component_1.EscolaComponent],
+        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, tecnologia_component_1.TecnologiaComponent],
         //Adicionar essa linha
         bootstrap: [app_component_1.AppComponent]
     }),
