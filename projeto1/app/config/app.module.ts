@@ -18,6 +18,9 @@ import { AlunoComponent } from '../aluno/components/aluno.component';
 //importar o componente de escola
 import { TecnologiaComponent } from '../tecnologia/components/tecnologia.component';
 
+//importar o componente de escola
+import { SituacaoComponent } from '../situacao/components/situacao.component';
+
 
 @NgModule({
     imports: [
@@ -26,7 +29,7 @@ import { TecnologiaComponent } from '../tecnologia/components/tecnologia.compone
         HttpModule
     ],
     //Adicionar essa linha
-    declarations: [AppComponent, UsuarioComponent, PerfilComponent, AlunoComponent, TecnologiaComponent],
+    declarations: [AppComponent, UsuarioComponent, PerfilComponent, AlunoComponent, TecnologiaComponent, SituacaoComponent],
     //Adicionar essa linha
     bootstrap: [AppComponent]
 })

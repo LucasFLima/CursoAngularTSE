@@ -1,0 +1,8 @@
+<div >
+  <form name="myForm">
+    <label for="repeatSelect"> Repeat select: </label>
+    <select name="repeatSelect" id="repeatSelect" >
+      <option ng-repeat="situacao in situacoes" value="{{situacao.cod}}">{{situacao.descricao}}</option>
+    </select>
+  </form>
+</div>
