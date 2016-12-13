@@ -3,7 +3,7 @@
 <div class="form-group col-md-2">
     <label>Nome do pais</label>
     <input class="form-control" required [(ngModel)]="paisObject.nome" ngControl="nome" #nome="ngModel"/>
-    <div [hidden]="nome.valid" class="alert alert-danger">
+           <div [hidden]="nome.valid" class="alert alert-danger">
         Name is required
     </div>
 </div>
@@ -27,6 +27,14 @@
     <label>Regime político</label>
     <input class="form-control" [(ngModel)]="paisObject.regimePolitico"/>
 </div>
+
+<div class="form-group col-md-1">
+    <label class="control-label" for="curso">Curso</label>
+    <select class="form-control "  [(ngModel)]="paisObject.curso.nome">
+        <option *ngFor="let curso of cursos" [value]="curso.nome">{{curso.nome}}</option>
+    </select>
+</div>
+
 
 <div *ngIf="!edit" class="form-group col-md-1">
     <button class="btn btn-primary" (click)="salvarPais(paisObject)">Salvar</button>
@@ -56,11 +64,14 @@
             Regime Político
         </th>
         <th>
+            Curso
+        </th>
+        <th>
             Operação
         </th>
     </tr>
 
-    <tr *ngFor="let pais of paiss; let i = index">
+    <tr *ngFor="let pais of paises; let i = index">
         <td>
             {{pais.nome}}
         </td>
@@ -71,7 +82,7 @@
             {{pais.populacao}}
         </td>
         <td>
-            {{pais.anoIndependencia | date:"dd/MM/yyyy"}}
+            {{pais.anoIndependencia }}
         </td>
         <td>
             {{pais.presidente}}
@@ -79,6 +90,11 @@
         <td>
             {{pais.regimePolitico}}
         </td>
+         <td>
+            {{pais.curso | json}}
+        </td>
+       
+        
 
         <td>
             <button class="btn btn-primary" (click)=editarPais(pais)>Editar</button>

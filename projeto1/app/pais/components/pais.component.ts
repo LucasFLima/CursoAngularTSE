@@ -11,6 +11,11 @@ import { PaisService } from '../service/pais.service';
 
 export class PaisComponent implements OnInit {
     // paiss = USUARIOS;
+    
+    cursos = [
+        {codigo: '10', nome: 'nome'},
+        {codigo: '20', nome: 'nome20'}
+    ]
 
     // implementação do método de listar usuários
     // paiss = this.listar();
@@ -34,7 +39,7 @@ export class PaisComponent implements OnInit {
 
 
     // implementação com chamada ao serviço 
-    paiss: Pais[];
+    paises: Pais[];
     errorMessage: string;
     i: number;
 
@@ -48,7 +53,7 @@ export class PaisComponent implements OnInit {
     getListPaiss(): void {
         this.paisService.getListPais()
             .subscribe(
-            paiss => this.paiss = paiss,
+            paiss => this.paises = paiss,
             error => this.errorMessage = <any>error);
     }
 
@@ -66,12 +71,12 @@ export class PaisComponent implements OnInit {
     //delete com chamada a serviço
     deletarPais(id, i): void {
         //this.paisDel = id;
-        this.paisDel = this.paiss[i].nome;
+        this.paisDel = this.paises[i].nome;
         alert("Exclusão da pais: " + this.paisDel);
         this.i = i;
         this.paisService.deletarPais(id)
             .subscribe(
-            success => this.paiss.splice(this.i, 1),
+            success => this.paises.splice(this.i, 1),
             error => this.errorMessage = <any>error);
     }
 
@@ -83,6 +88,7 @@ export class PaisComponent implements OnInit {
 
     // salvar usuário com chamada ao serviço
     salvarPais(pais: Pais) {
+        console.log(pais);
         if (!pais.nome) { return; }
         this.paisService.salvarPais(pais)
             .subscribe(
@@ -92,8 +98,9 @@ export class PaisComponent implements OnInit {
     }
 
     popularLista(pais: Pais) {
-        this.paiss.push(pais);
+        this.paises.push(pais);
         this.paisObject = new Pais();
+        this.paisObject.curso = {codigo:"", nome: ""};
     }
 
     // editar usuário apenas modificando a lista lo    cal
@@ -124,10 +131,13 @@ export class PaisComponent implements OnInit {
 
     atualizarFormulario(): void {
         this.paisObject = new Pais();
+        this.paisObject.curso = {codigo:"", nome: ""};
         this.edit = false;
     }
 
     ngOnInit(): void {
         this.getListPaiss();
+        this.paisObject.curso = {codigo:"", nome: ""};
+        
     }
 }

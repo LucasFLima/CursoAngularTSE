@@ -6,4 +6,8 @@ export class Pais {
     anoIndependencia: string;
     presidente: string;
     regimePolitico: string;
+    curso: {
+        codigo: string;
+        nome: string;
+    }
 } 

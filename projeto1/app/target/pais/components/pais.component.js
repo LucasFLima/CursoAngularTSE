@@ -14,6 +14,11 @@ var pais_service_1 = require("../service/pais.service");
 var PaisComponent = (function () {
     function PaisComponent(paisService) {
         this.paisService = paisService;
+        // paiss = USUARIOS;
+        this.cursos = [
+            { codigo: '10', nome: 'nome' },
+            { codigo: '20', nome: 'nome20' }
+        ];
         this.paisObject = new pais_1.Pais();
         this.edit = false;
     }
@@ -24,17 +29,17 @@ var PaisComponent = (function () {
     PaisComponent.prototype.getListPaiss = function () {
         var _this = this;
         this.paisService.getListPais()
-            .subscribe(function (paiss) { return _this.paiss = paiss; }, function (error) { return _this.errorMessage = error; });
+            .subscribe(function (paiss) { return _this.paises = paiss; }, function (error) { return _this.errorMessage = error; });
     };
     //delete com chamada a serviço
     PaisComponent.prototype.deletarPais = function (id, i) {
         var _this = this;
         //this.paisDel = id;
-        this.paisDel = this.paiss[i].nome;
+        this.paisDel = this.paises[i].nome;
         alert("Exclusão da pais: " + this.paisDel);
         this.i = i;
         this.paisService.deletarPais(id)
-            .subscribe(function (success) { return _this.paiss.splice(_this.i, 1); }, function (error) { return _this.errorMessage = error; });
+            .subscribe(function (success) { return _this.paises.splice(_this.i, 1); }, function (error) { return _this.errorMessage = error; });
     };
     // salvar usuário apenas com a exclusão da lista local 
     //salvarPais(pais): void {
@@ -44,6 +49,7 @@ var PaisComponent = (function () {
     // salvar usuário com chamada ao serviço
     PaisComponent.prototype.salvarPais = function (pais) {
         var _this = this;
+        console.log(pais);
         if (!pais.nome) {
             return;
         }
@@ -51,8 +57,9 @@ var PaisComponent = (function () {
             .subscribe(function (pais) { return _this.popularLista(pais); }, function (error) { return _this.errorMessage = error; });
     };
     PaisComponent.prototype.popularLista = function (pais) {
-        this.paiss.push(pais);
+        this.paises.push(pais);
         this.paisObject = new pais_1.Pais();
+        this.paisObject.curso = { codigo: "", nome: "" };
     };
     // editar usuário apenas modificando a lista lo    cal
     //    editarPais(pais, persistir=false): vo    id{
@@ -79,10 +86,12 @@ var PaisComponent = (function () {
     };
     PaisComponent.prototype.atualizarFormulario = function () {
         this.paisObject = new pais_1.Pais();
+        this.paisObject.curso = { codigo: "", nome: "" };
         this.edit = false;
     };
     PaisComponent.prototype.ngOnInit = function () {
         this.getListPaiss();
+        this.paisObject.curso = { codigo: "", nome: "" };
     };
     return PaisComponent;
 }());
