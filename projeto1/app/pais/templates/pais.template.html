@@ -1,0 +1,89 @@
+<h2>Cadastro de países</h2>
+
+<div class="form-group col-md-2">
+    <label>Nome do pais</label>
+    <input class="form-control" required [(ngModel)]="paisObject.nome" ngControl="nome" #nome="ngModel"/>
+    <div [hidden]="nome.valid" class="alert alert-danger">
+        Name is required
+    </div>
+</div>
+<div class="form-group col-md-1">
+    <label>Continente</label>
+    <input class="form-control" [(ngModel)]="paisObject.continente"/>
+</div>
+<div class="form-group col-md-1">
+    <label>População</label>
+    <input class="form-control" [(ngModel)]="paisObject.populacao"/>
+</div>
+<div class="form-group col-md-1">
+    <label>Independência</label>
+    <input class="form-control" [(ngModel)]="paisObject.anoIndependencia"/>
+</div>
+<div class="form-group col-md-2">
+    <label>Presidente</label>
+    <input class="form-control" [(ngModel)]="paisObject.presidente"/>
+</div>
+<div class="form-group col-md-2">
+    <label>Regime político</label>
+    <input class="form-control" [(ngModel)]="paisObject.regimePolitico"/>
+</div>
+
+<div *ngIf="!edit" class="form-group col-md-1">
+    <button class="btn btn-primary" (click)="salvarPais(paisObject)">Salvar</button>
+</div>
+<div *ngIf="edit" class="form-group col-md-1">
+    <button class="btn btn-primary" (click)="editarPais(paisObject, true)">Editar</button>
+</div>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Continente
+        </th>
+        <th>
+            População
+        </th>
+        <th>
+            Ano Independência
+        </th>
+        <th>
+            Presidente
+        </th>
+        <th>
+            Regime Político
+        </th>
+        <th>
+            Operação
+        </th>
+    </tr>
+
+    <tr *ngFor="let pais of paiss; let i = index">
+        <td>
+            {{pais.nome}}
+        </td>
+        <td>
+            {{pais.continente}}
+        </td>
+        <td>
+            {{pais.populacao}}
+        </td>
+        <td>
+            {{pais.anoIndependencia | date:"dd/MM/yyyy"}}
+        </td>
+        <td>
+            {{pais.presidente}}
+        </td>
+        <td>
+            {{pais.regimePolitico}}
+        </td>
+
+        <td>
+            <button class="btn btn-primary" (click)=editarPais(pais)>Editar</button>
+
+            <button class="btn btn-danger" (click)="deletarPais(pais._id, i)">Deletar</button>
+        </td>
+    </tr>
+</table>

@@ -10,10 +10,10 @@ import { Situacao } from '../class/situacao';
 export class SituacaoComponent  {
     
     
-    listar(): Situacao[]{
-        return [
-            {cod: '1', descricao: 'desc'}
-        ];
-    }
+//    listar(): Situacao[]{
+//        return [
+//            {cod: '1', descricao: 'desc'}
+//        ];
+//    }
     
 }

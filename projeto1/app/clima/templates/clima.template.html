@@ -1,0 +1,87 @@
+<h2>Cadastro de climas</h2>
+
+<div class="form-group col-md-2">
+    <label>Nome do Clima</label>
+    <input class="form-control" [(ngModel)]="climaObject.nome"   />
+</div>
+<div class="form-group col-md-1">
+    <label>Mínima</label>
+    <input class="form-control" [(ngModel)]="climaObject.minima"   />
+</div>
+<div class="form-group col-md-1">
+    <label>Máxima</label>
+    <input class="form-control" [(ngModel)]="climaObject.maxima"   />
+</div>
+<div class="form-group col-md-1">
+    <label>Umidade</label>
+    <input class="form-control" [(ngModel)]="climaObject.umidade"   />
+</div>
+<div class="form-group col-md-2">
+    <label>Vegetação</label>
+    <input class="form-control" [(ngModel)]="climaObject.vegetacao"   />
+</div>
+<div class="form-group col-md-2">
+    <label>Abrangência</label>
+    <input class="form-control" [(ngModel)]="climaObject.abrangencia"   />
+</div>
+
+<div *ngIf="!edit" class="form-group col-md-1">
+    <button class="btn btn-primary" (click)="salvarClima(climaObject)">Salvar</button>
+</div>
+<div *ngIf="edit" class="form-group col-md-1">
+    <button class="btn btn-primary" (click)="editarClima(climaObject, true)">Editar</button>
+</div>
+
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Mínima
+        </th>
+        <th>
+            Máxima
+        </th>
+        <th>
+            Umidade
+        </th>
+
+        <th>
+            Vegetação
+        </th>
+        <th>
+            Abrangêcia
+        </th>
+
+        <th>
+        </th>
+    </tr>
+    <tr *ngFor="let clima of climas; let i = index">
+        <td>
+            {{clima.nome}}
+        </td>
+        <td>
+            {{clima.minima}}
+        </td>
+        <td>
+            {{clima.maxima}}
+        </td>
+        <td>
+            {{clima.umidade}}
+        </td>
+        <td>
+            {{clima.vegetacao}}
+        </td>
+        <td>
+            {{clima.abrangencia}}
+        </td>                
+
+        <td>
+            <button class="btn btn-primary" (click)=editarClima(clima)>Editar</button>
+
+            <button class="btn btn-danger" (click)="deletarClima(clima._id, i)">Deletar</button>
+        </td>
+    </tr>
+</table>

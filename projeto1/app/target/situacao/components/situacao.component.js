@@ -12,11 +12,6 @@ var core_1 = require("@angular/core");
 var SituacaoComponent = (function () {
     function SituacaoComponent() {
     }
-    SituacaoComponent.prototype.listar = function () {
-        return [
-            { cod: '1', descricao: 'desc' }
-        ];
-    };
     return SituacaoComponent;
 }());
 SituacaoComponent = __decorate([

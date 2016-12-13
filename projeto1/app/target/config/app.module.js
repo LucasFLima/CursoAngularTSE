@@ -20,10 +20,14 @@ var usuario_component_1 = require("../usuario/components/usuario.component");
 var perfil_component_1 = require("../perfil/components/perfil.component");
 //importar o componente de aluno
 var aluno_component_1 = require("../aluno/components/aluno.component");
-//importar o componente de escola
+//importar o componente de tecnologia
 var tecnologia_component_1 = require("../tecnologia/components/tecnologia.component");
-//importar o componente de escola
+//importar o componente de situacao
 var situacao_component_1 = require("../situacao/components/situacao.component");
+//importar o componente de pais
+var pais_component_1 = require("../pais/components/pais.component");
+//importar o componente de clima
+var clima_component_1 = require("../clima/components/clima.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +41,7 @@ AppModule = __decorate([
             http_1.HttpModule
         ],
         //Adicionar essa linha
-        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, tecnologia_component_1.TecnologiaComponent, situacao_component_1.SituacaoComponent],
+        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, tecnologia_component_1.TecnologiaComponent, situacao_component_1.SituacaoComponent, pais_component_1.PaisComponent, clima_component_1.ClimaComponent],
         //Adicionar essa linha
         bootstrap: [app_component_1.AppComponent]
     }),
