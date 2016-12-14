@@ -16,8 +16,8 @@ var PaisComponent = (function () {
         this.paisService = paisService;
         // paiss = USUARIOS;
         this.cursos = [
-            { codigo: '10', nome: 'nome' },
-            { codigo: '20', nome: 'nome20' }
+            { codigo: '10', nome: 'dez' },
+            { codigo: '20', nome: 'vinte' }
         ];
         this.paisObject = new pais_1.Pais();
         this.edit = false;
@@ -36,7 +36,7 @@ var PaisComponent = (function () {
         var _this = this;
         //this.paisDel = id;
         this.paisDel = this.paises[i].nome;
-        alert("Exclusão da pais: " + this.paisDel);
+        //alert("Exclusão da pais: " + this.paisDel);
         this.i = i;
         this.paisService.deletarPais(id)
             .subscribe(function (success) { return _this.paises.splice(_this.i, 1); }, function (error) { return _this.errorMessage = error; });
@@ -49,7 +49,7 @@ var PaisComponent = (function () {
     // salvar usuário com chamada ao serviço
     PaisComponent.prototype.salvarPais = function (pais) {
         var _this = this;
-        console.log(pais);
+        //console.log(pais);
         if (!pais.nome) {
             return;
         }
@@ -59,7 +59,7 @@ var PaisComponent = (function () {
     PaisComponent.prototype.popularLista = function (pais) {
         this.paises.push(pais);
         this.paisObject = new pais_1.Pais();
-        this.paisObject.curso = { codigo: "", nome: "" };
+        this.paisObject.curso = this.cursos[1];
     };
     // editar usuário apenas modificando a lista lo    cal
     //    editarPais(pais, persistir=false): vo    id{
@@ -86,12 +86,11 @@ var PaisComponent = (function () {
     };
     PaisComponent.prototype.atualizarFormulario = function () {
         this.paisObject = new pais_1.Pais();
-        this.paisObject.curso = { codigo: "", nome: "" };
         this.edit = false;
     };
     PaisComponent.prototype.ngOnInit = function () {
         this.getListPaiss();
-        this.paisObject.curso = { codigo: "", nome: "" };
+        this.paisObject.curso = this.cursos[1];
     };
     return PaisComponent;
 }());

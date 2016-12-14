@@ -13,8 +13,8 @@ export class PaisComponent implements OnInit {
     // paiss = USUARIOS;
     
     cursos = [
-        {codigo: '10', nome: 'nome'},
-        {codigo: '20', nome: 'nome20'}
+        {codigo: '10', nome: 'dez'},
+        {codigo: '20', nome: 'vinte'}
     ]
 
     // implementação do método de listar usuários
@@ -72,7 +72,7 @@ export class PaisComponent implements OnInit {
     deletarPais(id, i): void {
         //this.paisDel = id;
         this.paisDel = this.paises[i].nome;
-        alert("Exclusão da pais: " + this.paisDel);
+        //alert("Exclusão da pais: " + this.paisDel);
         this.i = i;
         this.paisService.deletarPais(id)
             .subscribe(
@@ -88,7 +88,7 @@ export class PaisComponent implements OnInit {
 
     // salvar usuário com chamada ao serviço
     salvarPais(pais: Pais) {
-        console.log(pais);
+        //console.log(pais);
         if (!pais.nome) { return; }
         this.paisService.salvarPais(pais)
             .subscribe(
@@ -100,7 +100,7 @@ export class PaisComponent implements OnInit {
     popularLista(pais: Pais) {
         this.paises.push(pais);
         this.paisObject = new Pais();
-        this.paisObject.curso = {codigo:"", nome: ""};
+        this.paisObject.curso = this.cursos[1];
     }
 
     // editar usuário apenas modificando a lista lo    cal
@@ -131,13 +131,12 @@ export class PaisComponent implements OnInit {
 
     atualizarFormulario(): void {
         this.paisObject = new Pais();
-        this.paisObject.curso = {codigo:"", nome: ""};
         this.edit = false;
     }
 
     ngOnInit(): void {
         this.getListPaiss();
-        this.paisObject.curso = {codigo:"", nome: ""};
+        this.paisObject.curso = this.cursos[1];
         
     }
 }
