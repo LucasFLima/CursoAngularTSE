@@ -28,6 +28,9 @@ var situacao_component_1 = require("../situacao/components/situacao.component");
 var pais_component_1 = require("../pais/components/pais.component");
 //importar o componente de clima
 var clima_component_1 = require("../clima/components/clima.component");
+var home_component_1 = require("../home/components/home.component");
+var routes_1 = require("./routes/routes");
+var perfil_component_form_1 = require("../perfil/components/perfil.component.form");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,10 +41,22 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            routes_1.routing
         ],
         //Adicionar essa linha
-        declarations: [app_component_1.AppComponent, usuario_component_1.UsuarioComponent, perfil_component_1.PerfilComponent, aluno_component_1.AlunoComponent, tecnologia_component_1.TecnologiaComponent, situacao_component_1.SituacaoComponent, pais_component_1.PaisComponent, clima_component_1.ClimaComponent],
+        declarations: [
+            app_component_1.AppComponent,
+            usuario_component_1.UsuarioComponent,
+            perfil_component_1.PerfilComponent,
+            aluno_component_1.AlunoComponent,
+            tecnologia_component_1.TecnologiaComponent,
+            situacao_component_1.SituacaoComponent,
+            pais_component_1.PaisComponent,
+            clima_component_1.ClimaComponent,
+            home_component_1.HomeComponent,
+            perfil_component_form_1.PerfilComponentForm
+        ],
         //Adicionar essa linha
         bootstrap: [app_component_1.AppComponent]
     }),

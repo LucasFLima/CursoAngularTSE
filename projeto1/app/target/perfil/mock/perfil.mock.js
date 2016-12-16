@@ -1,8 +1,3 @@
 "use strict";
-exports.PERFIS = [
-    { nome: 'Adminstrador' },
-    { nome: 'Operador' },
-    { nome: 'Consulta' },
-    { nome: 'Editor' }
-];
+exports.PERFIS = [];
 //# sourceMappingURL=perfil.mock.js.map

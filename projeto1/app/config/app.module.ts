@@ -26,16 +26,33 @@ import { PaisComponent } from '../pais/components/pais.component';
 //importar o componente de clima
 import { ClimaComponent } from '../clima/components/clima.component';
 
+import { HomeComponent } from '../home/components/home.component';
 
+import { routing } from './routes/routes';
+
+import { PerfilComponentForm } from '../perfil/components/perfil.component.form';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        routing
     ],
+    
     //Adicionar essa linha
-    declarations: [AppComponent, UsuarioComponent, PerfilComponent, AlunoComponent, TecnologiaComponent, SituacaoComponent, PaisComponent, ClimaComponent],
+    declarations: [
+        AppComponent, 
+        UsuarioComponent, 
+        PerfilComponent, 
+        AlunoComponent, 
+        TecnologiaComponent, 
+        SituacaoComponent, 
+        PaisComponent, 
+        ClimaComponent,
+        HomeComponent,
+        PerfilComponentForm],
+    
     //Adicionar essa linha
     bootstrap: [AppComponent]
 })

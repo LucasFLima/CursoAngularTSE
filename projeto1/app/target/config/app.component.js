@@ -18,10 +18,25 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'projeto1',
-        //template com importação de arquivo externo
-        templateUrl: 'app/config/template.html'
+        template: "\n            <nav class=\"navbar navbar-default\">\n              <div class=\"container-fluid\">\n                <div class=\"navbar-header\">\n                  <a class=\"navbar-brand\" routerLink=\"/\">Projeto 7</a>\n                </div>\n                <ul class=\"nav navbar-nav\">\n                  <li class=\"active\"><a routerLink=\"/\">P\u00E1gina inicial</a></li>\n                  <li><a routerLink=\"/usuario\">Usu\u00E1rios</a></li>\n                  <li><a routerLink=\"/perfil\">Perfis</a></li>\n                </ul>\n              </div>\n            </nav>\n            <div class=\"container\">\n              <router-outlet></router-outlet>\n            </div>\n    "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+//
+//
+////import { Component } from '@angular/core';
+//import './rxjs-operators';
+//
+//
+//@Component({
+//    selector: 'projeto1',
+//    
+//    //template com importação de arquivo externo
+//    templateUrl: 'app/config/template.html'
+//    
+//})
+//export class AppComponent {
+//
+//}
 //# sourceMappingURL=app.component.js.map
